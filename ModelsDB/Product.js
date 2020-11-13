@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const productSchema =  new mongoose.Schema({
     categoria: String,
-    código: Number,
+    codigo: Number,
     producto: String,
-    descripción: String, 
+    descripcion: String, 
     marketing: String, 
-    dimensión: Number,
+    dimension: String,
     color: String, 
     precio: Number,
     descuento: Number
