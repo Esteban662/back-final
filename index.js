@@ -3,7 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const nodemon = require('nodemon');
+
 const cors = require('cors');
 
 // IMPORTO CONFIGURACION (Conexión)  --- IMPORTO RUTAS 
