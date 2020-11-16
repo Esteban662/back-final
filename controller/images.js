@@ -7,7 +7,7 @@ function getAllImages (req, res) {
     if(err) return res.status(500).send({message: 'Error al realizar la petición.'})
     if(!images) return res.status(404).send({message: 'No hay imagenes guardadas'})
 
-    res.status(200).send({images});
+    res.status(200).send(images);
   })
 
 }
