@@ -11,4 +11,4 @@ const imagesSchema= new mongoose.Schema({
 
 
 
-module.exports= mongoose.model('Images', imagesSchema)
+module.exports= mongoose.model('carousel-images', imagesSchema)
