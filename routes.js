@@ -17,11 +17,11 @@ api.get('/categoria', product_controller.getProductLiving)
 
 //Ruta Imagenes
 
-api.get('/images', images_controller.getAllImages)
+api.get('/images', imagen.getAllImages)
 
 //Ruta Redes Sociales
 
-api.get('/redes_sociales', redessociales_controller.getAllRedes)
+//api.get('/redes_sociales', redessociales_controller.getAllRedes)
 
 //Ruta Texto
 
