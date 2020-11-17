@@ -4,6 +4,6 @@ const TextoMarketingSchema =  new mongoose.Schema({
     texto: String
 })
  
-const TextoMarketingModel = mongoose.model('TextoMarketing', TextoMarketingSchema);
+const TextoMarketingModel = mongoose.model('texto-marketing', TextoMarketingSchema);
 
 module.exports = TextoMarketingModel;

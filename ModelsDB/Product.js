@@ -4,15 +4,16 @@ const productSchema =  new mongoose.Schema({
     categoria: String,
     codigo: Number,
     producto: String,
-    descripcion: String, 
-    marketing: String, 
+    descripcion: String,
+    marketing: String,
     dimension: String,
-    color: String, 
+    color: String,
     precio: Number,
     descuento: Number
-    
-})
- 
-const productModel = mongoose.model('Product', productSchema);
+
+  })
+
+
+const productModel = mongoose.model('products', productSchema);
 
 module.exports = productModel;

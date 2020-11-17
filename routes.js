@@ -1,33 +1,30 @@
 const express = require('express');
-const imagen = require('./controller/images');
 
-
+const imagen_controller = require('./controller/images');
 const product_controller = require('./controller/product');
+const socialMedia_controller= require('./controller/redesSociales');
+const textMarketing_controller= require ('./controller/textoMarketing')
 
+const api= express.Router();
 
-
-const api= express.Router()
+// SE DEFINEN LAS RUTAS PARA API Y SE EJECUTAN CONTROLADORES
 
 
 // Ruta Productos
 api.get('/productos', product_controller.getAllProducts);
-api.get('/categoria', product_controller.getProductLiving)
-
-
+api.get('/productos/:categoria', product_controller.getProductCategory);
 
 //Ruta Imagenes
+api.get('/images', imagen_controller.getAllImages);
 
-api.get('/images', imagen.getAllImages)
 
 //Ruta Redes Sociales
-
-//api.get('/redes_sociales', redessociales_controller.getAllRedes)
-
-//Ruta Texto
+api.get('/socialMedia', socialMedia_controller.getAllSocialMedia);
+api.post('/socialMedia', socialMedia_controller.addSocialMedia);
 
 
 
-
-
+//Ruta Texto Marketing
+api.get('/description', textMarketing_controller.getText);
 
 module.exports= api;

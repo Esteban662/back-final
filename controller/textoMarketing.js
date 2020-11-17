@@ -1,4 +1,4 @@
-const textoMarketing = require('../modelsDB/TextoMarketing');
+const textoMarketing = require('../ModelsDB/TextoMarketing');
 
 function getText(req,res){
     textoMarketing.find().then((TextFinded)=>{

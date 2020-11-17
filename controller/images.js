@@ -1,5 +1,4 @@
-const images = require('../modelsDB/Images');
-
+const images = require('../ModelsDB/Images');
 
 function getAllImages (req, res) {
 
@@ -14,4 +13,3 @@ function getAllImages (req, res) {
 module.exports={
     getAllImages
   }
-  
