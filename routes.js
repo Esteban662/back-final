@@ -3,7 +3,11 @@ const express = require('express');
 const imagen_controller = require('./controller/images');
 const product_controller = require('./controller/product');
 const socialMedia_controller= require('./controller/redesSociales');
-const textMarketing_controller= require ('./controller/textoMarketing')
+const textMarketing_controller= require ('./controller/textoMarketing');
+const contact_controller = require('./controller/contacts');
+
+
+const validations = require('./validations/validate');
 
 const api= express.Router();
 
@@ -25,6 +29,10 @@ api.post('/socialMedia', socialMedia_controller.addSocialMedia);
 
 
 //Ruta Texto Marketing
-api.get('/description', textMarketing_controller.getText);
+api.get('/textMarketing', textMarketing_controller.getText);
+
+//Ruta Contactos
+api.get('/contactForm', contact_controller.getContacts);
+api.post('/contactForm/', validations.contactValidate, contact_controller.setContact);
 
 module.exports= api;
