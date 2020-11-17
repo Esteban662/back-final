@@ -7,8 +7,6 @@ function getText(req,res){
     })
 }
 
-
-
 module.exports= {
     getText
   }
