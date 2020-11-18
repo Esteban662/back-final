@@ -1,11 +1,9 @@
 const Email= require('../modelsDB/Emails');
 
 function setEmailData(req, res) {
-  const emails= new Email();
-  const {email}= req.body;
-
-
-  mail.email= email;
+  const email= new Email();
+ 
+  email= email.req.body;
 
   user.save((err, emailStored)=> {
     if(err) return res.status(500).send({message: 'Error al ejecutar la petición.'});
