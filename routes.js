@@ -5,6 +5,8 @@ const product_controller = require('./controller/product');
 const socialMedia_controller= require('./controller/redesSociales');
 const textMarketing_controller= require ('./controller/textoMarketing');
 const contact_controller = require('./controller/contacts');
+const email_controller = require('./controller/emails');
+const sucursales_controller = require('./controller/sucursales')
 
 
 const validations = require('./validations/validate');
@@ -34,5 +36,11 @@ api.get('/textMarketing', textMarketing_controller.getText);
 //Ruta Contactos
 api.get('/contactForm', contact_controller.getContacts);
 api.post('/contactForm/', validations.contactValidate, contact_controller.setContact);
+
+//Ruta Email
+api.post('email/', validations.emailValidate, email_controller.setEmailData);
+
+//Ruta Sucursales
+api.get ('/sucursales', sucursales_controller.getAllStores)
 
 module.exports= api;

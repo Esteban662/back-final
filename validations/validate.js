@@ -8,8 +8,20 @@ function contactValidate(req, res, next) {
   
     next()
   }
+
+  function emailValidate(req, res, next) {
+    const newEmail= req.body
+    const inputs= ['email']
+  
+    for (elem of inputs) {
+      if( !newEmail.hasOwnProperty(elem)) return res.status(404).send({message: `Se deben completar todos los campos. Falta: ${elem}`})
+    }
+  
+    next()
+  }
   
 
   module.exports= {
-    contactValidate
+    contactValidate,
+    emailValidate
   }
