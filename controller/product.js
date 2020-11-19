@@ -21,7 +21,7 @@ function getProductCategory(req, res) {
     if (err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
     if (!product) return res.status(404).send({messagge:`No se ha encontrado `})
 
-    res.status(200).send({product})
+    res.status(200).send(product)
   })
 }
 
