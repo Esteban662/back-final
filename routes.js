@@ -21,7 +21,7 @@ const api= express.Router();
 api.get('/productos', product_controller.getAllProducts);
 api.get('/productos/:categoria', product_controller.getProductCategory);
 api.get('/sugeridos', favorite_controller.getAllFavoriteProducts);
-api.get('/productos/:producto', product_controller.getProductClass);
+api.get('/productos/:categoria/:producto', product_controller.getProductClass);
 
 //Ruta Imagenes
 api.get('/images', imagen_controller.getAllImages);
