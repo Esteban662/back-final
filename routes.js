@@ -6,7 +6,8 @@ const socialMedia_controller= require('./controller/redesSociales');
 const textMarketing_controller= require ('./controller/textoMarketing');
 const contact_controller = require('./controller/contacts');
 const email_controller = require('./controller/emails');
-const sucursales_controller = require('./controller/sucursales')
+const sucursales_controller = require('./controller/sucursales');
+const favorite_controller = require('./controller/productsFav')
 
 
 const validations = require('./validations/validate');
@@ -19,6 +20,8 @@ const api= express.Router();
 // Ruta Productos
 api.get('/productos', product_controller.getAllProducts);
 api.get('/productos/:categoria', product_controller.getProductCategory);
+api.get('/sugeridos', favorite_controller.getAllFavoriteProducts);
+api.get('/productos/:producto', product_controller.getProductClass);
 
 //Ruta Imagenes
 api.get('/images', imagen_controller.getAllImages);
