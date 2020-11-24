@@ -38,12 +38,25 @@ function getProductClass(req, res) {
   })
 }
 
+//Get by id
 
+function getProductById(req,res){
+  const ID = req.params.id
+
+  Product.findById(ID).then((productFinded)=>{
+    if(productFinded){
+      return res.status(200).send(productFinded)
+    }else{
+      return res.status(200).send({"Not Founded": "404"})
+    }
+  }).catch((err)=>{return res.status(500).send({"error":err})})
+
+}
 
 
 module.exports= {
     getAllProducts,
     getProductCategory,
-    getProductClass
-
+    getProductClass,
+    getProductById
   }
