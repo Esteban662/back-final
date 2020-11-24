@@ -10,7 +10,8 @@ const productSchema =  new mongoose.Schema({
     dimension: String,
     color: String,
     precio: Number,
-    descuento: Number
+    descuento: Number,
+    Pago: String
 
   })
 

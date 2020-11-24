@@ -2,10 +2,10 @@ const Email= require('../modelsDB/Emails');
 
 function setEmailData(req, res) {
   const suscrib= new Email();
-  const {token,email}= req.body;
+  const {email, name}= req.body;
 
   suscrib.email = email;
-  suscrib.token = token;
+  suscrib.name = name;
 
   user.save((err, emailStored)=> {
     if(err) return res.status(500).send({message: 'Error al ejecutar la petición.'});
