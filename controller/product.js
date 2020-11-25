@@ -79,7 +79,7 @@ function getProduct(req, res){
 
 const product = req.params.producto[0].toUpperCase() + req.params.producto.slice(1)
 
-    Product.find({ product: product })
+    Product.find({ producto: product })
         .then((productFinded) => {
             console.log({ "Producto": productFinded })
             if (!productFinded) {
