@@ -3,7 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-
+const mercadopago = require('mercadopago')
 const cors = require('cors');
 
 // IMPORTO CONFIGURACION (Conexión)  --- IMPORTO RUTAS 
@@ -33,6 +33,9 @@ mongoose.connect(config.atlas_route, (err, res)=> {
     }
   
     app.listen(config.PORT, ()=> {
+      mercadopago.configure({
+        access_token:"TEST-2854048285482072-112505-cadfbddf3a7daf2b7c374f0b5f2974e0-677553535"
+      })
       console.log(`Conexión con el servidor establecida en el puerto: ${config.PORT}`);
     })
   })

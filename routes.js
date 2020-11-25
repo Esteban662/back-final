@@ -9,7 +9,7 @@ const email_controller = require('./controller/emails');
 const sucursales_controller = require('./controller/sucursales');
 const favorite_controller = require('./controller/productsFav');
 const newCategory_controller = require('./controller/newCategory')
-
+const mercadoPagoController = require('./controller/mercadopago')
 
 const validations = require('./validations/validate');
 
@@ -52,5 +52,8 @@ api.post('email/', validations.emailValidate, email_controller.setEmailData);
 
 //Ruta Sucursales
 api.get ('/sucursales', sucursales_controller.getAllStores)
+
+//Mercado Pago
+api.get("/mercadopago", mercadoPagoController.mercadoPago)
 
 module.exports= api;
