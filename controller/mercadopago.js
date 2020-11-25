@@ -1,4 +1,6 @@
-function mercadoPago() {
+const mercadopago = require('mercadopago')
+
+function mercadoPago(req,res) {
     let preference = {
         items: [
             {
@@ -8,7 +10,8 @@ function mercadoPago() {
             }
         ]
     }
-    mercadoPago.preferences.create(preference)
+    
+    mercadopago.preferences.create(preference)
     .then((response)=>{
         return res.status(200).send({init_point:response.body.init_point})
     }).catch((err)=>{
