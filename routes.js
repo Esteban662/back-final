@@ -25,6 +25,9 @@ api.get('/sugeridos', favorite_controller.getAllFavoriteProducts);
 api.get('/productos/:categoria/:producto', product_controller.getProductClass);
 
 
+
+app.get('/productos/:producto', product_controller.getProduct);
+
 // Ruta  Nueva Categoria
 api.get('/categorias', newCategory_controller.getAllCategories);
 api.get ('/categorias/:categoria', newCategory_controller.getNewCategory);

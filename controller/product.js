@@ -41,9 +41,47 @@ function getProductClass(req, res) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Función para buscar por producto, incluso si esta en mayuscula
+
+function getProduct(req, res) {
+  const producto = req.params.producto[0].toUpperCase() + req.params.producto.slice(1)
+  
+  Product.find({ producto: producto })
+      .then((productoFinded) => {
+          console.log({ "Producto": productoFinded })
+          if (!productoFinded) {
+              return res.status(404).send({ "Not Finded": `404 ${req.body.producto} Not Finded` })
+          } else {
+              return res.status(200).send(productoFinded)
+          }
+      }).catch((err) => {
+          console.log({ "Error": err })
+          return res.status(500).send({ "Error": err })
+      })
+}
 module.exports= {
     getAllProducts,
     getProductCategory,
-    getProductClass
+    getProductClass,
+    getProduct
 
   }
+
+  
