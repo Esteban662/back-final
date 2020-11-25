@@ -23,10 +23,8 @@ api.get('/productos', product_controller.getAllProducts);
 api.get('/productos/:categoria', product_controller.getProductCategory);
 api.get('/sugeridos', favorite_controller.getAllFavoriteProducts);
 api.get('/productos/:categoria/:producto', product_controller.getProductClass);
-
-
-
-app.get('/productos/:producto', product_controller.getProduct);
+api.get('/productos/:categoria/:producto/:id', product_controller.getProductById)
+//api.get('/productos/:categoria/:producto', product_controller.getProduct);
 
 // Ruta  Nueva Categoria
 api.get('/categorias', newCategory_controller.getAllCategories);

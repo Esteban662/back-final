@@ -38,50 +38,67 @@ function getProductClass(req, res) {
   })
 }
 
+//buscar producto por ' id'
 
+function getProductById(req,res){
+  const ID = req.params.id
 
+  Product.findById(ID).then((productFinded)=>{
+    if(productFinded){
+      return res.status(200).send(productFinded)
+    }else{
+      return res.status(200).send({"Not Founded": "404"})
+    }
+  }).catch((err)=>{return res.status(500).send({"error":err})})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Función para buscar por producto, incluso si esta en mayuscula
-
-function getProduct(req, res) {
-  const producto = req.params.producto[0].toUpperCase() + req.params.producto.slice(1)
-  
-  Product.find({ producto: producto })
-      .then((productoFinded) => {
-          console.log({ "Producto": productoFinded })
-          if (!productoFinded) {
-              return res.status(404).send({ "Not Finded": `404 ${req.body.producto} Not Finded` })
-          } else {
-              return res.status(200).send(productoFinded)
-          }
-      }).catch((err) => {
-          console.log({ "Error": err })
-          return res.status(500).send({ "Error": err })
-      })
 }
+
+
+
+// Buscar productos incluyendo mayuscula
+
+/*function getProduct(req, res){
+  const producto = req.params.producto[0].toUppercase() + req.params.producto.slice(1)
+
+  Product.find({producto:producto})
+  .then((productoFinded)=> {
+    console.log({producto:productoFinded})
+    if(!productoFinded) {
+      return res.status(404).send({"Not Finded": `404 ${req.params.producto} Not Finded`})
+    }else{
+      return res.status (200).send(productoFinded)
+    }
+    
+  }).catch((err) =>{
+    console.log({"Error": err})
+    return res.status (500).send({"Error": err})
+  })
+}*/
+
+function getProduct(req, res){
+
+const product = req.params.producto[0].toUpperCase() + req.params.producto.slice(1)
+
+    Product.find({ product: product })
+        .then((productFinded) => {
+            console.log({ "Producto": productFinded })
+            if (!productFinded) {
+                return res.status(404).send({ "Not Finded": `404 ${req.body.producto} Not Finded` })
+            }else{
+                return res.status(200).send(productFinded)
+            }
+            }).catch((err) =>{
+            console.log({ "Error": err })
+            return res.status(500).send({ "Error": err })
+    });
+} 
+
+
 module.exports= {
     getAllProducts,
     getProductCategory,
     getProductClass,
+    getProductById,
     getProduct
 
-  }
-
-  
+}
