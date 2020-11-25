@@ -1,4 +1,4 @@
-const Contact = require('../modelsDB/Contacts');
+const Contact = require('../ModelsDB/Contacts');
 
 function setContact(req, res) {
     const contact= new Contact()

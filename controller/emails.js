@@ -1,4 +1,4 @@
-const Email= require('../modelsDB/Emails');
+const Email= require('../ModelsDB/Emails');
 
 function setEmailData(req, res) {
   const suscrib= new Email();
