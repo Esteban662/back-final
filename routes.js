@@ -54,6 +54,6 @@ api.post('email/', validations.emailValidate, email_controller.setEmailData);
 api.get ('/sucursales', sucursales_controller.getAllStores)
 
 //Mercado Pago
-api.get("/mercadopago", mercadoPagoController.mercadoPago)
+api.get("/mercadopago/:id", mercadoPagoController.mercadoPago)
 
 module.exports= api;
