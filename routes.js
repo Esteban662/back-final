@@ -10,7 +10,7 @@ const sucursales_controller = require('./controller/sucursales');
 const favorite_controller = require('./controller/productsFav');
 const newCategory_controller = require('./controller/newCategory')
 const mercadoPagoController = require('./controller/mercadopago')
-
+const mercadoFavController = require('./controller/mercadoFav')
 const validations = require('./validations/validate');
 
 const api= express.Router();
@@ -22,6 +22,7 @@ const api= express.Router();
 api.get('/productos', product_controller.getAllProducts);
 api.get('/productos/:categoria', product_controller.getProductCategory);
 api.get('/sugeridos', favorite_controller.getAllFavoriteProducts);
+api.get('/sugeridos/:id', favorite_controller.getFavById)
 //api.get('/productos/:categoria/:producto', product_controller.getProductClass);
 api.get('/productos/:categoria/:producto/:id', product_controller.getProductById)
 api.get('/productos/:categoria/:producto', product_controller.getProduct);
@@ -55,5 +56,5 @@ api.get ('/sucursales', sucursales_controller.getAllStores)
 
 //Mercado Pago
 api.get("/mercadopago/:id", mercadoPagoController.mercadoPago)
-
+api.get('/mercadofav/:id', mercadoFavController.mercadoFav)
 module.exports= api;

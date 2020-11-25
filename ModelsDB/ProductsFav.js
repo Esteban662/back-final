@@ -5,8 +5,9 @@ const favoriteSchema =  new mongoose.Schema({
     categoria: String,
     producto: String,
     precio: Number,
-    descuento: Number
-
+    descuento: Number,
+    descripcion:String,
+    color:String
   })
 
 

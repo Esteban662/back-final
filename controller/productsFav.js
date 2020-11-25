@@ -10,6 +10,20 @@ function getAllFavoriteProducts(req,res) {
   })
 }
 
+function getFavById(req,res){
+  const ID = req.params.id
+
+  FavoriteProduct.findById(ID).then((productFinded)=>{
+    if(productFinded){
+      console.log(productFinded)
+      return res.status(200).send(productFinded)
+    }else{
+      return res.status(200).send({"Not Founded": "404"})
+    }
+  }).catch((err)=>{return res.status(500).send({"error":err})})
+
+}
 module.exports= {
-    getAllFavoriteProducts
+    getAllFavoriteProducts,
+    getFavById
 }
